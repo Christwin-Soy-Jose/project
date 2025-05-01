@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Feedback Form</h3>
+  
+  <input id="name" placeholder="Name"><br><br>
+  <input id="email" placeholder="Email"><br><br>
+  <textarea id="feedback" placeholder="Your feedback"></textarea><br><br>
+  
+  <button onclick="checkForm()">Submit</button>
+  
+  <p id="msg"></p>
+
+  <script>
+    function checkForm() {
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const feedback = feedbackInput.value.trim();
+      const msg = document.getElementById("msg");
+
+      if (name && email && feedback) {
+        msg.textContent = "Thank you for your feedback!";
+        msg.style.color = "green";
+      } else {
+        msg.textContent = "Please enter data in all fields.";
+        msg.style.color = "red";
+      }
+    }
+
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const feedbackInput = document.getElementById("feedback");
+  </script>
+</body>
+</html>
